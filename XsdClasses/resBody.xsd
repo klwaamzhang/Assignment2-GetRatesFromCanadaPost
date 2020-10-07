@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.canadapost.ca/ws/ship/rate-v4" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="price-quotes">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="price-quote">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="service-code" type="xs:string" />
+							<xs:element name="service-link">
+								<xs:complexType>
+									<xs:attribute name="rel" type="xs:string" use="required" />
+									<xs:attribute name="href" type="xs:string" use="required" />
+									<xs:attribute name="media-type" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="service-name" type="xs:string" />
+							<xs:element name="price-details">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="base" type="xs:decimal" />
+										<xs:element name="taxes">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="gst">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:decimal">
+																	<xs:attribute name="percent" type="xs:decimal" use="required" />
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="pst" type="xs:decimal" />
+													<xs:element name="hst" type="xs:decimal" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="due" type="xs:decimal" />
+										<xs:element name="options">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="option">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="option-code" type="xs:string" />
+																<xs:element name="option-name" type="xs:string" />
+																<xs:element name="option-price" type="xs:unsignedByte" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="adjustments">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="adjustment">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="adjustment-code" type="xs:string" />
+																<xs:element name="adjustment-name" type="xs:string" />
+																<xs:element name="adjustment-cost" type="xs:decimal" />
+																<xs:element name="qualifier">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="percent" type="xs:decimal" />
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="weight-details" />
+							<xs:element name="service-standard">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="am-delivery" type="xs:boolean" />
+										<xs:element name="guaranteed-delivery" type="xs:boolean" />
+										<xs:element name="expected-transit-time" type="xs:unsignedByte" />
+										<xs:element name="expected-delivery-date" type="xs:date" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
