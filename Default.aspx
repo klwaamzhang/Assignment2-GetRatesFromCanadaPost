@@ -4,7 +4,8 @@
 
 
     <div >
-        <p>hello</p>
+        <asp:Label runat="server" ID="errStr"></asp:Label>
+         <asp:Literal ID="DynamicTable" runat="server"></asp:Literal>
     </div>
 
 </asp:Content>

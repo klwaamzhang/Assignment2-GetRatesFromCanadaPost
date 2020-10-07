@@ -122,6 +122,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="XsdClasses\reqBody.xml" />
+    <Content Include="XsdClasses\resBody.xml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -156,6 +158,12 @@
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
+    <None Include="XsdClasses\reqBody.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XsdClasses\resBody.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -191,6 +199,12 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="XsdClasses\reqBody.cs">
+      <DependentUpon>reqBody.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="XsdClasses\resBody.cs">
+      <DependentUpon>resBody.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
