@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Security.Authentication;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Text;
 using System.Xml.Serialization;
 using System.IO;
 using System.Xml;
-using System.Configuration;
 using System.Data;
 
 namespace Assignment2_GetRatesFromCanadaPost
